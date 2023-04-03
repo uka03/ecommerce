@@ -1,12 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import Cart from "../img/Cart";
 import Logo from "../img/Logo";
 import ProfileIcon from "../img/ProfileIcon.jsx";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <div className="w-full h-20 bg-blue-900 flex sticky top-0 z-50">
       <div className="container max-w-screen-xl mx-auto px-5 flex items-center h-full justify-between">
-        <Logo width={149} height={50} />
+        <div
+          className=""
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          {" "}
+          <Logo width={149} height={50} />
+        </div>
+
         <div className="w-2/4 h-full flex items-center ">
           <input
             type="text"
